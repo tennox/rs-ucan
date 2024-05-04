@@ -7,7 +7,7 @@ pub trait Scope: ToString + TryFrom<Url> + PartialEq + Clone {
     fn contains(&self, other: &Self) -> bool;
 }
 
-pub trait Ability: Ord + TryFrom<String> + ToString + Clone {}
+pub trait Ability: PartialOrd + TryFrom<String> + ToString + Clone {}
 
 #[derive(Clone, Eq, PartialEq)]
 pub enum ResourceUri<S>
